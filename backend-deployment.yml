@@ -20,8 +20,17 @@ spec:
         envFrom:
         - configMapRef:
             name: backend-env
+        volumeMounts:
+        - name: backend-secret-volume 
+          mountPath: "/home/ubuntu/"  
+          readOnly: true
         - secretRef:
             name: backend-secret
+
+    volumes:
+      - name: backend-secret-volume
+        secret:
+          secretName: backend-secret
 ---
 apiVersion: v1
 kind: Service
