@@ -1,0 +1,19 @@
+name: Deployment
+
+on:
+  push:
+    branches: [ "master" ]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout development files
+      uses: actions/checkout@v5
+      with:
+        sparse-checkout-cone-mode: false
+        sparse-checkout: |
+          backend/
+          compose-deployment.yml
+          frontend/
+      
