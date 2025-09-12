@@ -1,0 +1,12 @@
+services:
+    
+    backend:
+        image: ratndeep/delivery_app_backend:latest
+        build:
+            context: ./backend
+    
+    frontend:
+        image: ratndeep/delivery_app_frontend:latest
+        build:
+            context: ./frontend
+

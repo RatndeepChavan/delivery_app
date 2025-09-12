@@ -1,0 +1,30 @@
+services:
+    
+    backend:
+        image: ratndeep/delivery_app_backend:latest
+        build:
+            context: ./backend
+        container_name: backend
+        env_file: "backend/.env"
+        restart: always
+        ports:
+            - 8888:8888
+        networks:
+            - custom-net
+    
+    frontend:
+        image: ratndeep/delivery_app_frontend:latest
+        build:
+            context: ./frontend
+        container_name: frontend
+        env_file: "frontend/.env"
+        restart: always
+        ports:
+            - 3000:3000
+            - 8000:8000
+        networks:
+            - custom-net
+
+networks:
+    custom-net:
+        driver: bridge

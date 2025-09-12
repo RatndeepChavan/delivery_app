@@ -1,0 +1,59 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx -C dev-import --env-file .env --watch src/index.ts",
+    "start": "node --env-file .env dist/index.js",
+    "build": "tsc",
+    "type:check": "tsc --noEmit",
+    "lint:check": "eslint .",
+    "format:check": "prettier --check .",
+    "lint:fix": "eslint --fix .",
+    "format:fix": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@apollo/server": "^5.0.0",
+    "@as-integrations/express5": "^1.1.2",
+    "@graphql-tools/schema": "^10.0.25",
+    "bcrypt-ts": "^7.1.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "graphql": "^16.11.0",
+    "graphql-subscriptions": "^3.0.0",
+    "graphql-ws": "^6.0.6",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.17.1",
+    "ws": "^8.18.3",
+    "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@tsconfig/node22": "^22.0.2",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^24.2.1",
+    "@types/ws": "^8.18.1",
+    "eslint": "^9.33.0",
+    "eslint-plugin-perfectionist": "^4.15.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.1"
+  },
+  "imports": {
+    "#*": {
+      "dev-import": "./src/*",
+      "default": "./dist/*"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "extends": "@tsconfig/node22/tsconfig.json",
+
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "target": "esnext",
+    "module": "nodenext",
+    "lib": [
+      "esnext",
+      "esnext.asynciterable",
+      "DOM.AsyncIterable",
+      "DOM"
+    ],
+    "types": [
+      "node"
+    ],
+    
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+  },
+
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "dist"
+  ]
+}

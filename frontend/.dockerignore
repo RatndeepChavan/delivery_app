@@ -1,0 +1,32 @@
+# Environmental variables
+.env
+.env.example
+
+# Docker files
+.dockerignore
+Dockerfile
+
+# Installed packages
+node_modules
+
+# Build folder
+.next
+
+# Logs
+logs
+*.log
+
+# Git files
+.git
+.gitignore
+
+# Readme files and documentation
+docs
+jsdoc*
+README*
+*.md
+
+# IDE directories and files
+.vscode
+.prettierrc
+.prettierignore

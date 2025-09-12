@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-env
+data:
+  ENV: "prod"
+  DEV_SERVER: "http://localhost:8000/graphql"
+  PROD_SERVER: "http://backend:8888/graphql"

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-env
+data:
+  ENV: "prod"
+  DEV_ORIGIN: "http://localhost:3000"
+  PROD_ORIGIN: "http://localhost:3000"
+  DEV_HOST: "localhost"
+  PROD_HOST: "0.0.0.0"
+  DEV_PORT: "8000"
+  PROD_PORT: "8888"
+  JWT_ACCESS_TOKEN_AGE: "24*60*60*1000"
+  JWT_REFRESH_TOKEN_AGE: "7*24*60*60*1000"
