@@ -33,6 +33,9 @@ jobs:
     needs: build
     runs-on: self-hosted
     steps:
+      - name: Go to ubuntu directory
+        run : cd /home/ubuntu
+      
       - name: Checkout deployment files
         uses: actions/checkout@v5
         with:
