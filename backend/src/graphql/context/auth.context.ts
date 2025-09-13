@@ -23,6 +23,7 @@ export const authContext = (req: Request, res: Response): Promise<GraphQLContext
 
     // Extract the GraphQL operation name from request body (case-insensitive)
     const operationName = (req.body as RequestBody).operationName?.toLowerCase() ?? "";
+    console.log({operationName})
 
     // 🚪 Skip authentication for public operations
     if (bypassOperations.includes(operationName)) {

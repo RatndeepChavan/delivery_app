@@ -28,20 +28,20 @@ jobs:
 
     - name: Push images to docker hub
       run: docker compose -f compose-deployment.yml push
-
-  deploy:
-    needs: build
-    runs-on: self-hosted
-    steps:
-      - name: Checkout deployment files
-        uses: actions/checkout@v5
-        with:
-          sparse-checkout-cone-mode: false
-          sparse-checkout: |
-            backend-configmap.yml
-            backend-deployment.yml
-            frontend-configmap.yml
-            frontend-deployment.yml
-      
-      - name: Update deployment
-        run: kubectl apply -f .
+      #
+      #  deploy:
+      #needs: build
+      #runs-on: self-hosted
+      #steps:
+      # - name: Checkout deployment files
+      #  uses: actions/checkout@v5
+      #  with:
+      #    sparse-checkout-cone-mode: false
+      #    sparse-checkout: |
+      #      backend-configmap.yml
+      #      backend-deployment.yml
+      #      frontend-configmap.yml
+      #      frontend-deployment.yml
+      # 
+      #- name: Update deployment
+      #  run: kubectl apply -f .

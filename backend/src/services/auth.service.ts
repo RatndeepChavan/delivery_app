@@ -28,9 +28,12 @@ export const AuthService = {
      */
     login: async ({ email, password }: ILogin): Promise<IAuthPayload> => {
         try {
+	    console.log({ email, password })
+
             // 🔍 Find user by email
             const userData = await User.findOne({ email }).lean();
-            if (!userData) {
+            console.log({userData})
+	    if (!userData) {
                 throw graphqlErrorHandler(customMsg.email.not_found, ERROR_CODES.NOT_FOUND);
             }
 

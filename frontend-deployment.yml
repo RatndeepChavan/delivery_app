@@ -20,6 +20,8 @@ spec:
         envFrom:
         - configMapRef:
             name: frontend-env
+        - secretRef:
+            name: frontend-secret
 ---
 apiVersion: v1
 kind: Service
