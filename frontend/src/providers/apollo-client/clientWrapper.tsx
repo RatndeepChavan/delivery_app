@@ -17,7 +17,7 @@ import { getMainDefinition } from "@apollo/client/utilities";
  * 🌐 HTTP link for standard GraphQL queries and mutations
  */
 const httpLink = new HttpLink({
-	uri: "http://backend:8888/graphql",
+	uri: "http://65.2.188.29:8888/graphql",
 	fetchOptions: {},
 });
 
@@ -26,7 +26,7 @@ const httpLink = new HttpLink({
  */
 const wsLink =  new GraphQLWsLink(
 	createClient({
-		url: "ws://backend:8888/graphql",
+		url: "ws://65.2.188.29:8888/graphql",
 	})
 )
 
