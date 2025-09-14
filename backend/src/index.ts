@@ -56,6 +56,7 @@ await connectDB();
 httpServer.listen(
     {
         hostname: HOST,
+	methods: ["GET", "HEAD", "OPTIONS", "POST", "PUT", "PATCH", "DELETE"],
         port: PORT,
     },
     () => {
