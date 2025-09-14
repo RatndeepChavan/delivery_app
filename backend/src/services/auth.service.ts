@@ -29,6 +29,8 @@ export const AuthService = {
     login: async ({ email, password }: ILogin): Promise<IAuthPayload> => {
         try {
 	    console.log({ email, password })
+	    const allData = await User.find()
+	    console.log("data : ", allData)
 
             // 🔍 Find user by email
             const userData = await User.findOne({ email }).lean();
@@ -61,6 +63,7 @@ export const AuthService = {
             return {token, user}
         } 
         catch (err) {
+	    console.log("err : ", err)
             // ? If it's a known validation or not-found error, rethrow as-is
             if (err instanceof GraphQLError) {
                 const errCode = err.extensions.code;
