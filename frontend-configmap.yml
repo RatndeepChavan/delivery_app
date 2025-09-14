@@ -6,3 +6,5 @@ data:
   ENV: "prod"
   DEV_SERVER: "http://localhost:8000/graphql"
   PROD_SERVER: "http://backend:8888/graphql"
+  DEV_CALLBACK_URL: "http://localhost:3000/login"
+  PROD_CALLBACK_URL: "http://65.2.188.29:30080/login"

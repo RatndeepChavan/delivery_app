@@ -9,7 +9,6 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
 	const handleLogout = () => {
 		signOut({
 			redirect: true,
-			callbackUrl: "/login",
 		});
 	};
 

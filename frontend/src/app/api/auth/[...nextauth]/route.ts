@@ -5,7 +5,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { HttpLink } from "@apollo/client";
 import { ApolloClient, InMemoryCache } from "@apollo/client-integration-nextjs";
-import { SERVER_PATH, NEXTAUTH_SECRET } from "#/utils/env";
+import { SERVER_PATH, NEXTAUTH_SECRET, CALLBACK_URL } from "#/utils/env";
 
 
 // --- Token expiration configuration ---
@@ -127,6 +127,14 @@ const authOptions: NextAuthOptions = {
 			}
             return session;
 		},
+
+		/**
+		 * Redirect callback is called after signout function
+		 * - Redirects user to login page
+		 */
+		async redirect(){
+			return CALLBACK_URL as string
+		}
 	},
 
 	// --- Custom pages ---
