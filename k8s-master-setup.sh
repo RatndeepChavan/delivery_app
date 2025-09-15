@@ -15,6 +15,9 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 # Installing CNI Plugin
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
+# Adding ingress controller
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.13.2/deploy/static/provider/baremetal/deploy.yaml
+
 # If you get permission error for flannel then run below command
 # sudo chown $(id -u):$(id -g) /etc/kubernetes/admin.conf
 # ?If you export admin.conf then you might need to run above command 
