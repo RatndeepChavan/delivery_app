@@ -7,11 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
     nginx.ingress.kubernetes.io/websocket-services: "backend"
 spec:
-  defaultBackend:
-    service:
-      name: frontend 
-      port:
-        number: 3000
+  ingressClassName: nginx
   rules:
   - http:
       paths:
@@ -22,3 +18,11 @@ spec:
             name: backend
             port:
               number: 8888
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend
+            port:
+              number: 3000
+

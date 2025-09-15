@@ -26,7 +26,7 @@ const httpLink = new HttpLink({
  */
 const wsLink =  new GraphQLWsLink(
 	createClient({
-		url: "ws://backend:8888/graphql",
+		url: "ws://localhost:8888/graphql",
 	})
 )
 
